@@ -1,1 +1,11 @@
+<ul>
+	<%= @products.each do |product| %>
+		<li><%= product.name %><br>
+			<div id="description-<%= product.id %>"><%= truncate(product.description) %></div>
+			<div id="inventory-<%= product.id %>"></div>
+			<button class="js-more" data-id="<%= product.id %>">More Info</button>
+		</li>
+	<% end %>
+</ul>
 
+<%= javascript_include_tag "application" %>
